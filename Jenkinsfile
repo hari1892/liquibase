@@ -22,4 +22,5 @@ agent { label 'master' }
         }
        }
     }
+}
       

@@ -9,6 +9,7 @@ pipeline {
     ansiColor('xterm')
   }
 agent { label 'master' }
+  stages {
           stage('Unit Testing')
         { 
           steps {
@@ -33,5 +34,6 @@ agent { label 'master' }
          }
        }
     }
+}
 
       

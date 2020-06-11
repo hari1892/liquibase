@@ -16,7 +16,7 @@ pipeline {
                         echo 'Testing'
                     }
                 }
-        stage('Liquibase') {
+        stage('Deploying Target Database') {
             steps {
                 withCredentials([usernamePassword(credentialsId: "LIQUIBASE", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh 'echo $USERNAME $PASSWORD'

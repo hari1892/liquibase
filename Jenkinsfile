@@ -9,10 +9,11 @@ pipeline {
     ansiColor('xterm')
   }
 agent { label 'master' }
-    stages {
           stage('Unit Testing')
         { 
+          steps {
             echo 'Testing'
+          }
         }
         stage('Liquibase') {
         steps {
@@ -26,9 +27,11 @@ agent { label 'master' }
         }
              stage('Compare schema with previous stage')
        { 
+         steps {
            echo 'comparing schema'
+         }
          }
        }
     }
-}
+
       

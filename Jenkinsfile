@@ -10,6 +10,10 @@ pipeline {
   }
 agent { label 'master' }
     stages {
+          stage('Unit Testing')
+        { 
+            echo 'Testing'
+        }
         stage('Liquibase') {
         steps {
           withCredentials([usernamePassword(credentialsId: "LIQUIBASE", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -20,6 +24,10 @@ agent { label 'master' }
             """
           }
         }
+             stage('Compare schema with previous stage')
+       { 
+           echo 'comparing schema'
+         }
        }
     }
 }
